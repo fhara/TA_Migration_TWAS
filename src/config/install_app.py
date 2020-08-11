@@ -84,7 +84,7 @@ parms += " -nouseMetaDataFromBinary"
 parms += " -MapWebModToVH [[.* .* default_host]]"
 #parms += ' -MapResRefToEJB [[ "Think Web Application" "" thinkdemoapp-0.0.1-snapshot.war,WEB-INF/web.xml db2con javax.sql.DataSource db2con "" "" ]]'
 #parms += ' -MapResRefToEJB [[ThinkDemoApp .* thinkdemoapp-0.0.1-snapshot.war,WEB-INF/web.xml db2con javax.sql.DataSource]]'
-parms += ' -MapResRefToEJB [[ "Thinkdemoapp","",'thinkdemoapp-0.0.1-snapshot.war,WEB-INF/web.xml','jdbc/pakdemo','javax.sql.DataSource','jbdc/db2con','DefaultPrincipalMapping','was01Node01/db2user',""]]'
+parms += ' -MapResRefToEJB [[ "Thinkdemoapp","","thinkdemoapp-0.0.1-snapshot.war,WEB-INF/web.xml","jdbc/pakdemo","javax.sql.DataSource","db2con","DefaultPrincipalMapping","was01Node01/db2user",""]]'
 
 print "parms:"
 print parms
