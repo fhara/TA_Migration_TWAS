@@ -10,6 +10,7 @@ NodeName=AdminControl.getNode()
 # The following variables are used to replace sensitive data in the configuration for the application.
 # The values for these variables were not collected because the includeSensitiveData option was not specified.
 # ============================================================
+# was01Node01_db2user_password_1=''
 was01Node01_db2user_password_1='P@ssw0rd29'
 # ============================================================
 
@@ -30,7 +31,8 @@ print 'Starting Creating Connection Factories'
 
 print 'Starting Creating JDBC Providers'
 AdminConfigVar_0=AdminConfig.create('JDBCProvider', Node, [['name', 'DB2_Universal_JDBC_Driver_Provider'], ['implementationClassName', 'com.ibm.db2.jcc.DB2ConnectionPoolDataSource'], ['providerType', 'DB2 Universal JDBC Driver Provider'], ['description', 'One-phase commit DB2 JCC provider that supports JDBC 3.0. Data sources that use this provider support only 1-phase commit processing, unless you use driver type 2 with the application server for z/OS. If you use the application server for z/OS, driver type 2 uses RRS and supports 2-phase commit processing.'], ['classpath', '/work/config/lib/db2jcc.jar'], ['xa', 'false']])
-AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "db2", "-jndiName", "db2con", "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper", "-componentManagedAuthenticationAlias", "was01Node01/db2user", "-configureResourceProperties", "[[databaseName java.lang.String pakdemo] [driverType java.lang.Integer 4] [serverName java.lang.String db2server] [portNumber java.lang.Integer 50000] ]"])
+# AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "db2", "-jndiName", "db2con", "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper", "-componentManagedAuthenticationAlias", "was01Node01/db2user", "-configureResourceProperties", "[[databaseName java.lang.String pakdemo] [driverType java.lang.Integer 4] [serverName java.lang.String db2server] [portNumber java.lang.Integer 50000] ]"])
+AdminConfigVar_1=AdminTask.createDatasource(AdminConfigVar_0, ["-name", "db2", "-jndiName", "db2con", "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper", "-componentManagedAuthenticationAlias", "was01Node01/db2user", "-configureResourceProperties", "[[databaseName java.lang.String pakdemo] [driverType java.lang.Integer 4] [serverName java.lang.String 10.212.13.196] [portNumber java.lang.Integer 50000] ]"])
 AdminConfigVar_2=AdminConfig.showAttribute(AdminConfigVar_1, 'propertySet')
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'jmsOnePhaseOptimization'], ['type', 'java.lang.Boolean'], ['value', 'false']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'preTestSQLString'], ['type', 'java.lang.String'], ['value', 'SELECT CURRENT SQLID FROM SYSIBM.SYSDUMMY1']])
