@@ -10,7 +10,7 @@ NodeName=AdminControl.getNode()
 # The following variables are used to replace sensitive data in the configuration for the application.
 # The values for these variables were not collected because the includeSensitiveData option was not specified.
 # ============================================================
-was01Node01_db2user_password_1=''
+was01Node01_db2user_password_1='P@ssw0rd29'
 # ============================================================
 
 print 'Starting Creating JVM Properties'
