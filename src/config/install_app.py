@@ -84,5 +84,12 @@ parms += " -nouseMetaDataFromBinary"
 parms += " -MapWebModToVH [[.* .* default_host]]"
 app = AdminApp.install("/work/config/thinkdemoapp-0.0.1-snapshot.war", [parms])
 
+print "node:"
+print node
+print "server:"
+print server
+print "app:"
+print app
+
 AdminConfig.save()
 
