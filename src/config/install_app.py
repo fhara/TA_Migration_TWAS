@@ -83,6 +83,8 @@ parms += " -node " + node + " -server " + server
 parms += " -nouseMetaDataFromBinary"
 parms += " -MapWebModToVH [[.* .* default_host]]"
 
+parms += " -MapResRefToEJB [ "Think Web Application" "" thinkdemoapp-0.0.1-snapshot.war,WEB-INF/web.xml db2con javax.sql.DataSource db2con "" "" ]"
+
 print "parms:"
 print parms
 
