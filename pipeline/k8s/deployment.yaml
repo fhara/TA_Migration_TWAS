@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: thinkdemoappwar
+  name: thinkdemoappwar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thinkdemoappwar
+  template:
+    metadata:
+      labels:
+        app: thinkdemoappwar
+    spec:
+      containers:
+        - image: docker.io/application
+          imagePullPolicy: Always
+          name: thinkdemoappwar
+          ports:
+            - containerPort: 9080
