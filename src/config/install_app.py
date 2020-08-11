@@ -74,9 +74,15 @@ def getName (objectId):
 
 
 print "Installing application ..."
-
+print "001:getnode"
 node = getName(getNodeId(""))
+print "node:"
+print node
+
+print "002:getserver"
 server = getName(getServerId(""))
+print "server:"
+print server
 
 parms = "-appname thinkdemoappwar"
 parms += " -node " + node + " -server " + server
@@ -84,10 +90,6 @@ parms += " -nouseMetaDataFromBinary"
 parms += " -MapWebModToVH [[.* .* default_host]]"
 app = AdminApp.install("/work/config/thinkdemoapp-0.0.1-snapshot.war", [parms])
 
-print "node:"
-print node
-print "server:"
-print server
 print "app:"
 print app
 
