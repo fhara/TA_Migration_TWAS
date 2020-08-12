@@ -62,6 +62,10 @@ AdminConfig.create('J2EEResourceProperty', AdminConfigVar_2, [['name', 'validate
 AdminConfigVar_3=AdminConfig.showAttribute(AdminConfigVar_1, 'connectionPool')
 AdminConfig.modify(AdminConfigVar_3, [['stuckThreshold', '0'], ['reapTime', '180'], ['testConnectionInterval', '0'], ['connectionTimeout', '180'], ['surgeCreationInterval', '0'], ['surgeThreshold', '-1'], ['stuckTimerTime', '0'], ['numberOfFreePoolPartitions', '0'], ['minConnections', '0'], ['unusedTimeout', '1800'], ['agedTimeout', '0'], ['numberOfSharedPoolPartitions', '0'], ['purgePolicy', 'EntirePool'], ['maxConnections', '10'], ['freePoolDistributionTableSize', '0'], ['stuckTime', '0'], ['testConnection', 'false'], ['numberOfUnsharedPoolPartitions', '0']])
 
+print "----JDBCProvider,datasource----"
+print AdminConfig.list('JDBCProvider')
+print AdminConfig.list('DataSource', AdminConfig.getid( '/Cell/DefaultCell01/Node/DefaultNode01/Server/server1/'))
+
 print 'Starting Creating Variables'
 
 print 'Starting Saving Configuration Changes Before Application Deployment'
