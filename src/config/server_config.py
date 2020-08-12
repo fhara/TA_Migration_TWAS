@@ -7,6 +7,9 @@ Node=AdminConfig.getid('/Cell:' + AdminControl.getCell() + '/Node:' + AdminContr
 Server=AdminConfig.getid('/Cell:' + AdminControl.getCell() + '/Node:' + AdminControl.getNode() + '/Server:server1')
 NodeName=AdminControl.getNode()
 
+print "----------------"
+
+
 # The following variables are used to replace sensitive data in the configuration for the application.
 # The values for these variables were not collected because the includeSensitiveData option was not specified.
 # ============================================================
@@ -20,6 +23,14 @@ print 'Starting Creating JVM Properties'
 print 'Starting Creating Authentication Alias'
 GlobalSecurityVar=AdminConfig.getid('/Cell:' + AdminControl.getCell() + '/' + 'Security:/')
 AdminConfig.create('JAASAuthData', GlobalSecurityVar, [['userId', 'db2inst1'], ['description', ''], ['password', was01Node01_db2user_password_1], ['alias', 'was01Node01/db2user']])
+
+print Cell
+print Node
+print Server
+print NodeName
+print GlobalSecurityVar
+
+print "----------------"
 
 print 'Starting Creating Queues'
 
